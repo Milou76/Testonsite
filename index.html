@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Site Tester - Téléchargement</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #da2707 0%, #d7ad44 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+
+        .hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #da2707 0%, #d7ad44 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .download-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #da2707 0%, #d7ad44 100%);
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.4em;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .download-btn:active {
+            transform: translateY(-2px);
+        }
+
+        .download-icon {
+            font-size: 1.2em;
+        }
+
+        .file-info {
+            margin-top: 15px;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .feature p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .steps {
+            margin: 40px 0;
+        }
+
+        .steps h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #667eea;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #da2707 0%, #d7ad44 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .tagline {
+                font-size: 1.1em;
+            }
+
+            .download-btn {
+                padding: 18px 40px;
+                font-size: 1.2em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="header-section">
+                <div class="logo">🚀</div>
+                <h1>Local Site Tester</h1>
+                <p class="tagline">Testez vos sites web sur mobile en quelques secondes</p>
+            </div>
+
+            <div class="content">
+                    <div class="download-section">
+                    <a href="Installateur.exe" class="download-btn" download>
+                        <span class="download-icon">⬇️</span>
+                        <span>Télécharger pour Windows</span>
+                    </a>
+                    <div class="file-info">
+                        📦 Installateur.exe • ~35 MB • Windows 10/11
+                    </div>
+                </div>
+
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">📱</div>
+                        <h3>Test Mobile Rapide</h3>
+                        <p>Testez instantanément votre site sur n'importe quel appareil mobile connecté au même WiFi</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Installation Automatique</h3>
+                        <p>L'installateur configure Node.js et toutes les dépendances nécessaires automatiquement</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🔧</div>
+                        <h3>Injection CSS/JS</h3>
+                        <p>Les fichiers CSS et JavaScript sont automatiquement injectés en inline</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📁</div>
+                        <h3>Upload Facile</h3>
+                        <p>Glissez-déposez votre dossier complet ou uploadez des fichiers individuels</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🌐</div>
+                        <h3>Interface Moderne</h3>
+                        <p>Interface web intuitive et design moderne pour gérer vos projets</p>
+                    </div>
+                </div>
+
+                <div class="steps">
+                    <h2>Comment ça marche ?</h2>
+                    
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Téléchargez et installez</h3>
+                            <p>Cliquez sur le bouton de téléchargement ci-dessus et exécutez l'installateur. Suivez les instructions à l'écran.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Lancez le serveur</h3>
+                            <p>Ouvrez "Local Site Tester" depuis le menu Démarrer. Une console s'ouvrira avec un QR code.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Uploadez votre site</h3>
+                            <p>Ouvrez http://localhost:4000 dans votre navigateur et uploadez votre projet web (dossier complet ou fichiers).</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Testez sur mobile</h3>
+                            <p>Tapez l'URL affichée. Votre site s'affiche instantanément !</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Local Site Tester • Outil gratuit pour développeurs web</p>
+        <p style="margin-top: 10px; font-size: 0.9em;">Made with ❤️ for developers</p>
+    </footer>
+</body>
+</html>
